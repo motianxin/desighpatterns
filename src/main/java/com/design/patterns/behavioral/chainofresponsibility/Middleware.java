@@ -1,5 +1,11 @@
 package com.design.patterns.behavioral.chainofresponsibility;
 
+/**
+ * <Middleware>
+ *
+ * @author admin
+ * @since 2020/10/18 1:14
+ */
 public abstract class Middleware {
     private Middleware next;
 
