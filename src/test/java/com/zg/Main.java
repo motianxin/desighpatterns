@@ -11,19 +11,22 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
-
     public static final String[] ABC = new String[]{"a", "b", "c", "d", "e", "f"};
 
     public static final Random RANDOM = new Random();
 
     public static void main(String[] args) {
-        Set<String> delNames = new HashSet<String>() {{
-            add("b");
-            add("c");
-            add("f");
-            add("e");
-            add("d");
-        }};
+        Set<String> delNames = new HashSet<String>() {
+            private static final long serialVersionUID = 4113370928006940808L;
+
+            {
+                add("b");
+                add("c");
+                add("f");
+                add("e");
+                add("d");
+            }
+        };
 
         Holder<Integer> result = new Holder<>(0);
 

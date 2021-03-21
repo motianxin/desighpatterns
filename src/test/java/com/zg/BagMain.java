@@ -3,7 +3,7 @@ package com.zg;
 import java.util.Arrays;
 
 public class BagMain {
-    private static final int[] CIONS = new int[]{1, 5, 6, 8, 4, 2, 7};
+    private static final int[] COINS = new int[]{1, 5, 6, 8, 4, 2, 7};
 
     public static void main(String[] args) {
         int amount = 300;
@@ -21,8 +21,8 @@ public class BagMain {
         }
         int temp = amount;
         int subAmount;
-        for (int cion : CIONS) {
-            subAmount = dp(amount - cion);
+        for (int coin : COINS) {
+            subAmount = dp(amount - coin);
             if (subAmount == -1) {
                 continue;
             }
@@ -43,8 +43,8 @@ public class BagMain {
         }
         int temp = amount;
         int subAmount;
-        for (int cion : CIONS) {
-            subAmount = dp(amount - cion, memo);
+        for (int coin : COINS) {
+            subAmount = dp(amount - coin, memo);
             if (subAmount == -1) {
                 continue;
             }
@@ -59,11 +59,11 @@ public class BagMain {
         Arrays.fill(dp, amount + 1);
         dp[0] = 0;
         for (int i = 0; i < amount + 1; i++) {
-            for (int cion : CIONS) {
-                if (i - cion < 0) {
+            for (int coin : COINS) {
+                if (i - coin < 0) {
                     continue;
                 }
-                dp[i] = Math.min(dp[i], 1 + dp[i - cion]);
+                dp[i] = Math.min(dp[i], 1 + dp[i - coin]);
             }
         }
         int result = dp[amount] == amount + 1 ? -1 : dp[amount];

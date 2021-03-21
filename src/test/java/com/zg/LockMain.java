@@ -2,15 +2,17 @@ package com.zg;
 
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.Objects;
 import java.util.Queue;
 import java.util.Set;
 
 public class LockMain {
+    public static final Set<String> DEADENDS = new HashSet<String>() {
+        private static final long serialVersionUID = -7579303754743260572L;
 
-    public static final Set<String> DEADENDS = new HashSet<String>() {{
-        add("8531");
-    }};
+        {
+            add("8531");
+        }
+    };
 
     public static final String STAR = "0000";
 
