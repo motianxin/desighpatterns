@@ -24,13 +24,13 @@ public class NQueen {
             System.out.println("----------");
             return;
         }
-        for (int i = 0; i < board.length; i++) {
-            if (isIllegally(board, row, i)) {
+        for (int col = 0; col < board.length; col++) {
+            if (isIllegally(board, row, col)) {
                 continue;
             }
-            board[row][i] = QUEEN_FLAG;
+            board[row][col] = QUEEN_FLAG;
             solveNQueen(board, row + 1);
-            board[row][i] = 0;
+            board[row][col] = 0;
         }
     }
 
