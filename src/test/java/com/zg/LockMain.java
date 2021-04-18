@@ -40,6 +40,9 @@ public class LockMain {
                     System.out.println(step);
                     return;
                 }
+                if (cur == null) {
+                    return;
+                }
                 // 周围的
                 Set<String> surround = getAround(cur);
                 for (String around : surround) {
