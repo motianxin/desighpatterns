@@ -45,11 +45,7 @@ public class LockMain {
                 }
                 // 周围的
                 Set<String> surround = getAround(cur);
-                for (String around : surround) {
-                    if (visited.add(around)) {
-                        queue.offer(around);
-                    }
-                }
+                surround.stream().filter(visited::add).forEach(queue::offer);
             }
             step++;
         }
