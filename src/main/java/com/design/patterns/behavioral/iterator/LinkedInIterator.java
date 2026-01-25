@@ -23,7 +23,7 @@ public class LinkedInIterator implements ProfileIterator {
     }
 
     private void lazyLoad() {
-        if (emails.size() == 0) {
+        if (emails.isEmpty()) {
             List<String> profiles = linkedIn.requestRelatedContactsFromLinkedInAPI(this.email, this.type);
             for (String profile : profiles) {
                 this.emails.add(profile);
